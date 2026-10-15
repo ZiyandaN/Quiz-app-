@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--The start button-->
+    <div class ="start_button">
+        <buttton>START QUIZ</buttton>
+    </div>
+
+    <!--iNFO BOX-->
+    <div class = "info_box">
+        <div class ="info_title">
+            <span>Quiz Rules</span>
+        </div>
+
+        <div class = "info_list">
+            <div class = "info">Rule 1<span>10 seconds</span></div>
+            <div class = "info">Rule 2</div>
+            <div class = "info">Rule 3</div>
+            <div class = "info">Rule 4</div>
+            <div class = "info">Rule 5</div>
+         </div>
+
+<!--The exit and next buttons-->
+         <div class ="buttons">
+            <button class = "quit">End Quiz</button>
+            <button class = "restart">Continue</button>
+
+         </div>
+
+         <!--   QUIZ BOX-->
+            <div class = "quiz_box">
+                <header>
+                    <div class = "title">MATCH THE ALBUM TO THE ARTIST</div>
+                    <div class = "timer">
+                    <div class = "time_text">Time Left:</div>
+                    <div class = "timer_sec">15</div>
+            </div>
+                    <div class = "time_line"></div>
+                </header>
+    
+                <section>
+                    <div class = "question_text">
+                        <span>Who released an album called Lemonade in 2016</span>
+                    </div>
+    
+                    <div class = "option_list">
+                        <div class = "option">
+                            <span> Rihanna</span>
+                            <div class = "icon cross">
+                                <i class = "fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class = "option">
+                            <span>Beyonce</span>
+                            <div class = "icon tick">
+                                <i class = "fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class = "option">
+                            <span>Nicki Minaj</span>
+                            <div class = "icon cross">
+                                <i class = "fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class = "option">
+                            <span>Cardi B</span>
+                            <div class = "icon cross">
+                                <i class = "fas fa-times"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+    
+                <!--The next button-->
+                <footer>
+                    <div class = "total_questions">
+                        <span>1 of 5 questins</span>
+                        <!--Here I've inserted total question number from JavaScript-->
+                    </div>
+                    <button class = "next_btn">Next Question </button>
+                </footer>
+
+        
+
+    </div>
+
+   
+
+
+
+
+
+</body>
+</html>

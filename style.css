@@ -1,0 +1,237 @@
+body
+{
+    background-color:pink;
+
+}
+.start_button,.info_box,.quiz_box,.result_box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info_box
+{
+    
+    position: absolute;
+    centre: 100%;
+    top: 50%;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.start_button
+{
+    background-color:rgb(217, 0, 255);
+    position: absolute;
+    color:white;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.info_box .info_title
+{
+    height: 50px;
+    width: 100%;
+    border-bottom:0.5px solid #ccc;
+    text-align: center;
+
+}
+
+.info_box .info_list
+{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.info_box .info_list .info span
+{
+ 
+    color: #2686ac;
+}
+
+.info_box .buttons
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_box .buttons button
+{
+    padding: 10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:all 0.3s ease; /*Not sure waht this does lol*/
+}
+
+.buttons button.quit
+{
+    background-color: #f44336;
+    color: white;
+}
+
+.buttons button.quit:hover
+{
+    background-color: #da190b;
+}
+   
+.buttons button.restart
+{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttons button.restart:hover
+{
+    background-color: #45a049;
+}
+
+.quiz_box
+
+{
+    width: 550px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+.quiz_box header
+{
+    height: 70px;
+    padding:0% 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 
+}
+
+.quiz_box header .title
+{
+    font-size: 20px;
+    font-weight: 800;
+    text-align:center;
+}
+
+.quiz_box header .timer
+{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: aqua;
+
+}
+
+
+.quiz_box header .timer .time_text
+{
+    text-align:center;
+    font-weight: 150;
+    font-size:17px;
+    user-select:none;
+
+}
+.quiz_box header .timer .timer_sec
+{
+    position: relative;
+    z-index:99;
+    text-align: center;
+    font-size: 18px;
+    font-weight:500;
+    background:aqua;
+    height: 30px;
+    width:45px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-top: 5%;
+}
+.quiz_box footer
+{
+    padding: 20px;
+}
+
+
+.quiz_box .fooer .next_btn
+{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.quiz_box .button .next_btn:hover  /*this does not work*/
+{
+    background-color: #45a049;
+}
+
+.quiz_box .section
+{
+    padding: 25px 30px 20px 30px;
+    background-color: white;
+}
+
+.quiz_box section .que_text
+{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quiz_box section .option_list
+{
+ padding: 12px 16px;     /* breathing room inside each box */
+  border: 1px solid #4a5adf;
+  border-radius: 8px;
+  background: #f5f7ff;
+  font-family: system-ui, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  white-space: nowrap;    /* stop "Nicki Minaj" / "Cardi B" from wrapping */
+  transition: background 0.2s, transform 0.2s;
+}
+section .option_list .option 
+{
+    background-color: aliceblue;
+    border: 1px solid blue;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+
+}
+.quiz_box section .option_list .option:hover
+{
+    background: #e3e8ff;
+    transform: translateY(-2px);
+}
+
+.option_list .option .icon
+{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height : 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+}
+.option_list .option .icon
+{
+icon.tick  { color: #1e9e4a; }
+.icon.cross { color: #d93025; }
+}
+
