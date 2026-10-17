@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!--The start button-->
     <div class ="start_button">
-        <buttton>START QUIZ</buttton>
+        <button>START QUIZ</button>
     </div>
 
     <!--iNFO BOX-->
@@ -19,12 +21,13 @@
         </div>
 
         <div class = "info_list">
-            <div class = "info">Rule 1<span>10 seconds</span></div>
-            <div class = "info">Rule 2</div>
-            <div class = "info">Rule 3</div>
-            <div class = "info">Rule 4</div>
-            <div class = "info">Rule 5</div>
+            <div class = "info">Rule 1: You have <span>15 seconds</span> for each question</div>
+            <div class = "info">Rule 2: You may on choose 1 answer at a time </div>
+            <div class = "info">Rule 3: Each correct answer is 1 point </div>
+            <div class = "info">Rule 4: The correct answer will turn green</div>
+            <div class = "info">Rule 5: The wrong answer will turn red</div>
          </div>
+    
 
 <!--The exit and next buttons-->
          <div class ="buttons">
@@ -32,6 +35,8 @@
             <button class = "restart">Continue</button>
 
          </div>
+    </div>
+
 
          <!--   QUIZ BOX-->
             <div class = "quiz_box">
@@ -45,53 +50,45 @@
                 </header>
     
                 <section>
-                    <div class = "question_text">
-                        <span>Who released an album called Lemonade in 2016</span>
+                    <div class = "que_text">
+                        <!--<span> Who released an album called Lemonade in 2016</span>-->
                     </div>
     
                     <div class = "option_list">
-                        <div class = "option">
-                            <span> Rihanna</span>
-                            <div class = "icon cross">
-                                <i class = "fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class = "option">
-                            <span>Beyonce</span>
-                            <div class = "icon tick">
-                                <i class = "fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class = "option">
-                            <span>Nicki Minaj</span>
-                            <div class = "icon cross">
-                                <i class = "fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class = "option">
-                            <span>Cardi B</span>
-                            <div class = "icon cross">
-                                <i class = "fas fa-times"></i>
-                            </div>
-                        </div>
-                        
                     </div>
                 </section>
     
                 <!--The next button-->
                 <footer>
                     <div class = "total_questions">
-                        <span>1 of 5 questins</span>
-                        <!--Here I've inserted total question number from JavaScript-->
+                        <span><p>1</p><p>Of</p><p>5</p><p>Questions</p></span>
                     </div>
                     <button class = "next_btn">Next Question </button>
                 </footer>
-
-        
-
     </div>
 
-   
+
+    <!--Results Box-->
+    <div class = "result_box">
+        <div class ="icon">
+            <i class= "fas fa-crown"></i>
+        </div>
+        <div class ="complete_text">Quiz Completed</div>
+        <div class = "score_text"> 
+            <span>FAILED:You only got <p>2</p>put of <p>5</p></span>
+        </div>
+        <div class ="buttons">
+            <button class ="restart">RESTART QUIZ</button>
+            <button class ="quit">END QUIZ</button>
+            
+        </div>
+</div>
+ 
+
+<!--Javascript -->
+<script src="JS/questions.js"></script>
+<script src="JS/script.js"></script>
+
 
 
 

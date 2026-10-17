@@ -5,17 +5,20 @@ body
 }
 .start_button,.info_box,.quiz_box,.result_box
 {
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    
 }
+/* INFO BOX*/
+
 
 .info_box
 {
-    
     position: absolute;
-    centre: 100%;
     top: 50%;
     width: 400px;
     background-color: white;
@@ -23,19 +26,28 @@ body
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    opacity:0;
+    pointer-events: none;
+    transform: translate(-50%, -50%)scale(0.9)
+
 }
+.info_box.activeInfo,
+.quiz_box.activeQuiz
+{
+    z-index: 5;
+    opacity:1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1) ;
+}
+/* THE START BUTTON*/
 
 .start_button
 {
-    background-color:rgb(217, 0, 255);
+    background-color:rgb(145, 27, 165);
     position: absolute;
-    color:white;
-    top:50%;
-    left:50%;
     transform: translate(-50%, -50%);
-    padding:10px 20px;
-    border:none;
-    border-radius:5px;
+    padding: 20px 10px;
+    border-radius:5px ;
     cursor:pointer;
 }
 
@@ -57,7 +69,7 @@ body
 .info_box .info_list .info span
 {
  
-    color: #2686ac;
+    color: #024762;
 }
 
 .info_box .buttons
@@ -70,12 +82,13 @@ body
 .info_box .buttons button
 {
     padding: 10px 20px;
-    border:none;
+    outline:none;
     border-radius:5px;
     cursor:pointer;
     transition:all 0.3s ease; /*Not sure waht this does lol*/
 }
-
+ 
+/* INFO BOX BUTTONS*/
 .buttons button.quit
 {
     background-color: #f44336;
@@ -98,40 +111,51 @@ body
     background-color: #45a049;
 }
 
+/* QUIZ BOX SECTION*/
+
+
 .quiz_box
 
 {
+    
     width: 550px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 12px; 
+    opacity:0;
+    pointer-events: none;
+    transform: translate(-50%, -50%)scale(0.9);
+
 }
+
 
 
 .quiz_box header
 {
+    position:relative;
     height: 70px;
     padding:0% 20px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 5px 5px 0 0;
-    box-shadow: 0px 3px 5px 
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 3px 5px black;
 }
 
 .quiz_box header .title
 {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 900;
     text-align:center;
 }
 
 .quiz_box header .timer
 {
     display:flex;
-    align-items: center;
+    align-items:center;
     justify-content:space-between;
-    background-color: aqua;
+    border-radius: 10px;
+    background-color: rgb(239, 135, 248);
 
 }
 
@@ -151,87 +175,153 @@ body
     text-align: center;
     font-size: 18px;
     font-weight:500;
-    background:aqua;
+    background:rgb(244, 164, 255);
     height: 30px;
     width:45px;
     color: white;
     border-radius: 5px;
-    border: 1px solid black;
+    border:2px;
     padding-top: 5%;
 }
+
+.quiz_box section
+{
+    padding :25px 30px 20px 30px;
+    background-color: white;
+}
+.quiz_box section .que_text
+{
+    font-size: 30px;
+    font-weight:1000;
+}
+.quiz_box section .option_list
+{
+    display:block;
+    padding: 12px 16px;
+    transition: background 0.2s ,transform 0.2s;
+}
+section .option_list .option
+{
+    display:flex;
+    background-color: aliceblue;
+    border: 2px solid rgb(24, 101, 117);
+    border-radius: 15px;
+    padding: 8px 14px;
+    margin-bottom:6px;
+    align-items:center;
+    justify-content: space-between;
+    cursor :pointer;
+    transition: all 0.3s ease;
+}
+.quiz_box section .option_list .option:hover
+{
+    background: aqua;
+    transform: translateY(-2px)
+}
+
+.quiz_box section .option_list .option.correct
+{
+    background: #29b84b;
+    border-color: #0d4721;
+}
+
+.quiz_box section .option_list .option.incorrect
+{
+    background: #c96069;
+    border-color: #5e0b05;
+}
+
+.quiz_box section .option_list .option.disabled
+{
+    pointer-events: none;
+}
+
+.option_list .option .icon
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.option_list .option .icon.tick
+{
+    color: #1e9e4a;
+    border-color:#022b04;
+    background-color: white;
+}
+
+.option_list .option .icon.cross
+{
+    color: #d93025;
+    border-color :#4a0d09;
+    background-color:aliceblue;
+}
+
+/* FOOTER PART*/
+
 .quiz_box footer
 {
-    padding: 20px;
+    display: flex;           
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width:100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 
-.quiz_box .fooer .next_btn
+.quiz_box footer .total_questions span
 {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    display: flex;
+    user-select: none;
+}
+
+.quiz_box footer .total_questions span p
+{
+    font-weight: 500;
+    padding :0 5px;
+}
+.quiz_box footer .next_btn
+{
+    height:40px;
+    padding:0 13px;
+    font-size:18px;
+    background-color: #066c98;
     color: white;
     border:none;
     border-radius:5px;
     cursor:pointer;
 }
 
-.quiz_box .button .next_btn:hover  /*this does not work*/
+.quiz_box footer .next_btn:hover
 {
-    background-color: #45a049;
+    background-color: #0a85bb;
 }
 
-.quiz_box .section
+/* THE RESULTS*/
+
+.result_box
 {
-    padding: 25px 30px 20px 30px;
+    width: 450px;
     background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
-.quiz_box section .que_text
+.result_box.activeResult
 {
-    font-size: 25px;
-    font-weight: 600;
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
-
-.quiz_box section .option_list
-{
- padding: 12px 16px;     /* breathing room inside each box */
-  border: 1px solid #4a5adf;
-  border-radius: 8px;
-  background: #f5f7ff;
-  font-family: system-ui, sans-serif;
-  font-size: 18px;
-  text-align: center;
-  white-space: nowrap;    /* stop "Nicki Minaj" / "Cardi B" from wrapping */
-  transition: background 0.2s, transform 0.2s;
-}
-section .option_list .option 
-{
-    background-color: aliceblue;
-    border: 1px solid blue;
-    border-radius: 1px;
-    transition: all 0.3s ease;
-
-}
-.quiz_box section .option_list .option:hover
-{
-    background: #e3e8ff;
-    transform: translateY(-2px);
-}
-
-.option_list .option .icon
-{
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    height : 26px;
-    width: 26px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-
-}
-.option_list .option .icon
-{
-icon.tick  { color: #1e9e4a; }
-.icon.cross { color: #d93025; }
-}
-
